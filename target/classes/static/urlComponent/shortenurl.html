@@ -1,0 +1,45 @@
+<div ng-controller="shortenController">
+	<div class="urlContainer"> 
+		<span ng-class="result.result.result ? '' : 'warningMessage'">{{ result.result.resultMessage }}</span>
+		
+		<form name="loginForm" class="register" >
+			<table style="width:100%; border-spacing:0;">
+				<tr>
+					<td><span>Long URL:</span></td>
+					<td><span>{{ longlocalUrl }}</span></td>
+					<td><button ng-click="removeURl()" ng-class="regularClass" style="background:#b30000;"  ng-disabled="isDeleteDisable">REMOVE</button></td>
+				</tr>
+				<tr>
+					<th height="25">URL SHORTENER</th>
+					<th height="25">SHORTENED URL</th>
+					<th height="25"></th>	
+				</tr>
+				<tr>
+					<td><span>Google Shortener:</span></td>
+					<td><span>{{ info_show.surl1 }}</span></td>
+					<td><button ng-click="regenGoogle(url)" ng-disabled="isDisabled1" class="disabledButton" >REGENERATE</button></td>
+				</tr>
+				<tr>
+					<td><span>Hecsu Shortener:</span></td>
+					<td><span>{{info_show.surl2}}</span></td>
+					<td><button ng-click="regenHecsu(url)" class="disabledButton" ng-disabled="isDisabled2">REGENERATE</button></td>
+				</tr>
+				<tr>
+					<td><span>LnkSuite Shortener:</span></td>
+					<td><span>{{info_show.surl3}}</span></td>
+					<td><button ng-click="regenLkn(info_show.surlid3)" ng-disabled="isDisabled3" ng-class="regularClass">REGENERATE</button></td>
+				</tr>
+				<tr>
+				<td colspan="3" >
+					<span>
+						<input type="checkbox" name="isPublic" ng-checked="isPublic" 
+							ng-model="urlAccess" ng-click="makeUrlPublic(urlAccess)"> Public Mode
+					</span>
+				</td>	
+			</table>
+		</form>
+	</div>
+	
+	</div>
+</div>
+

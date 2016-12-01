@@ -1,0 +1,20 @@
+<div ng-controller="enquiryController">
+	
+	<h2>Username : {{ username }}</h2>
+	<div class="enqContainer"  style="height: 400px;">
+		
+		<table style="width:100%; border-spacing:0;">
+          <tr>
+          	<th>#</th>
+          	<th>Long URL</th>
+          	<th>Action</th>
+          </tr>
+          <tr ng-repeat="(urlID, urlAddress) in urlList">
+	        <td> {{ urlID }}</td>        
+	        <td style="text-align: center"><a href="" ng-click="redirectSUrl(urlID, urlAddress)">{{ urlAddress }}</a></td>
+	        <td style="text-align: center"><img alt="Delete" src="../images/delete_small.png" ng-click="deleteUrl(urlID)"></td>
+		   </tr>   
+        </table>
+	</div>
+</div>
+

@@ -1,0 +1,19 @@
+<div ng-controller="urlHomeController">
+	
+	<div class="form_settings">
+		<div class="urlContainer"> 
+			<form name="homePage" class="register">
+					<p>
+						<span>Your URL:</span>
+						<input type="text" name="longUrlText" class="register-input" ng-model="url.text" placeholder="Paste a link to shorten">
+						<button ng-click="!homePage.longUrlText.$error.required && shortenURL(url) && disableButton()" class="shortenButton" ng-disabled="isDisabled">
+							SHORTEN
+						</button>
+					</p>
+			
+			</form>
+	    </div>
+	    <div class="errMesage"> <p><span>{{errorMessage}}</span><p></div>
+	</div>
+</div>
+

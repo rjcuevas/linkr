@@ -1,0 +1,19 @@
+<div ng-controller="loginController">
+	<div class="mainLogin">
+		<form name="loginForm" class="register">
+			<div class="form_settings">
+				<p><span>Username : </span><input type="text" class="register-input" name="username" placeholder="Enter your username" ng-model="user.username" maxlength="50" required></p>
+				
+				<p><span>Password : </span><input type="password" class="register-input"  name="password" placeholder="Enter your password" ng-model="user.password" maxlength="50" required></p>
+	
+				<p style="padding-top: 15px">
+					<button class="submit" ng-click="!loginForm.username.$error.required &&  !loginForm.password.$error.required  &&  login(user)" >Login</button>
+					<button class="cancel" ng-click="reset()" style="background:#b30000;">Cancel</button>
+					<a class="signUp" href="#/createuser">Sign Up</a>
+				</p>
+			</div>
+			<p><span ng-class="result.result.result ? '' : 'warningMessage'"><label>{{ resultMessage }} </label></span></p>
+		</form>
+	</div>
+</div>
+

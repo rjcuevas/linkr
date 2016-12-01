@@ -1,0 +1,23 @@
+<div ng-controller="userController">
+	
+	<div class="registerUser">
+		<div class="form_settings">
+			<div class="headTitle"><h1 class="registerTitle">{{"Create User"}}</h1></div> 
+			<form name="createUser"  class="register">
+					<p><span>First Name : </span><input type="text" class="register-input" name="first_name" placeholder="Enter your name" ng-model="user.first_name" maxlength="50" required></p>
+					<p><span>Last Name : </span><input type="text" class="register-input" name="last_name" placeholder="Enter your name" ng-model="user.last_name" maxlength="50" required> </p>
+					<p><span>Email : </span><input type="text" class="register-input" name="email" placeholder="Enter your email" ng-model="user.email" ng-pattern="emailpattern" maxlength="50" required> </p>
+					<p><span>Username : </span><input type="text" class="register-input" name="username" placeholder="Enter your username" ng-model="user.username" maxlength="50" required> </p>
+					<p><span>Password : </span><input type="password" class="register-input" name="password" placeholder="Enter your new password" ng-model="user.password" maxlength="50" required> </p>
+					<p style="padding-top: 15px"><button ng-click="!createUser.first_name.$error.required && !createUser.last_name.$error.required 
+						&& !createUser.email.$error.required && !createUser.username.$error.required 
+						&& !createUser.password.$error.required && !createUser.email.$error.pattern && createuser(user)" class="submit" >Sign up</button> 
+						<button ng-click="reset()" class="cancel" style="background:#b30000;">Cancel</button></p>
+			</form>
+		</div>
+	</div>
+	<div class="messageBox">
+		<span ng-show="createUser.email.$error.pattern" >Please input valid email address exampleemail@accenture.com</span>
+		<div ng-class="result.result.result ? '' : 'warningMessage'">{{result.result.resultMessage}}</div> 
+	</div>
+</div>

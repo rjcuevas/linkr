@@ -1,0 +1,85 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+  <title>Linkr_1</title>
+  
+  <meta name="description" content="website description" />
+  <meta name="keywords" content="website keywords, website keywords" />
+  <meta http-equiv="content-type" content="text/html; charset=windows-1252" />
+  <meta http-equiv="robots" content="noindex,nofollow" />
+  <link rel="stylesheet" type="text/css" id="theme" href="css/style.css" />
+  <!-- modernizr enables HTML5 elements and feature detects -->
+  <script type="text/javascript" src="js/modernizr-1.5.min.js"></script>
+  
+  <!--[if lt IE 9]><script src="//html5shim.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular-route.js"></script>
+
+  <script src="appMain.js"></script>
+
+  <script src="usercomponent/userConfig.js"></script>
+  <script src="usercomponent/userService.js"></script>
+  <script src="usercomponent/loginController.js"></script>
+  <script src="usercomponent/userController.js"></script>
+
+  <script src="urlComponent/urlHomeController.js"></script>
+  <script src="urlComponent/urlService.js"></script>
+
+  <script src="urlComponent/shortcontroller.js"></script>
+  <script src="urlComponent/userProfileController.js"></script>
+ 
+   <script src="urlComponent/headController.js"></script>
+
+</head>
+
+<body>
+<div ng-app="mainApp">
+
+  <div id="main">
+  
+    <header ng-controller="headerController">
+      <div id="logo">
+        <div id="logo_text">
+          <!-- class="logo_colour", allows you to change the colour of the text -->
+          <h1><a href="#/">Link<span class="logo_colour">r</span></a></h1>
+          <h2>URL Shortener</h2>
+        </div>
+      </div>
+      <nav>
+        <div id="menu_container">
+          <ul class="sf-menu" id="nav">
+            <li><a href="" ng-click="gotoIndex()">Url Home</a></li>
+            <li><a href="" ng-click="gotoUserProfile()">User Profile</a></li>
+            <li><a href="" ng-click="gotoLogout()">Sign out</a></li>
+          </ul>
+        </div>
+      </nav>
+    </header>
+    <div id="site_content">
+		<div style="height: 500px;">
+			<div ng-view> </div>
+		</div>
+    </div>
+    <div id="scroll">
+      <a title="Scroll to the top" class="top" href="#"><img src="images/top.png" alt="top" /></a>
+    </div>
+    <footer>
+      <p><a href="index.html">Home</a> | <a href="examples.html">Examples</a> | <a href="page.html">A Page</a> | <a href="another_page.html">Another Page</a> | <a href="contact.html">Contact Us</a></p>
+    </footer>
+  </div>
+  
+  <!-- javascript at the bottom for fast page loading -->
+  <script type="text/javascript" src="js/jquery.js"></script>
+  <script type="text/javascript" src="js/jquery.easing-sooper.js"></script>
+  <script type="text/javascript" src="js/jquery.sooperfish.js"></script>
+  <script type="text/javascript">
+    $(document).ready(function() {
+      $('ul.sf-menu').sooperfish();
+      $('.top').click(function() {$('html, body').animate({scrollTop:0}, 'fast'); return false;});
+    });
+  </script>
+</div>
+
+</body>
+</html>

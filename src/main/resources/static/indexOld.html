@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]> <html class="lt-ie9 lt-ie8 lt-ie7" lang="en"> <![endif]-->
+<!--[if IE 7]> <html class="lt-ie9 lt-ie8" lang="en"> <![endif]-->
+<!--[if IE 8]> <html class="lt-ie9" lang="en"> <![endif]-->
+<!--[if gt IE 8]><!-->
+<html lang="en">
+<!--<![endif]-->
+<html>
+<head>
+
+<link rel="stylesheet" href="css/linkrStyle.css"> 
+<link rel="stylesheet" href="css/query.css">
+
+<!--[if lt IE 9]><script src="//html5shim.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular-route.js"></script>
+
+<script src="appMain.js"></script>
+
+<script src="usercomponent/userConfig.js"></script>
+<script src="usercomponent/userService.js"></script>
+<script src="usercomponent/loginController.js"></script>
+<script src="usercomponent/userController.js"></script>
+
+<script src="urlComponent/urlHomeController.js"></script>
+<script src="urlComponent/urlService.js"></script>
+
+<script src="urlComponent/shortcontroller.js"></script>
+<script src="urlComponent/userProfileController.js"></script>
+
+
+<meta charset="UTF-8"></meta>
+<title>Linkr</title>
+</head>
+<body>
+	<div ng-app="mainApp">
+		<div ng-view></div>
+	</div>
+</body>
+</html>
